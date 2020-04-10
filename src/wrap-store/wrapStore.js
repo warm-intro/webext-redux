@@ -163,16 +163,16 @@ export default (store, {
   /**
    * Safety message to tabs for content scripts
    */
-  browserAPI.tabs.query({}, tabs => {
-    for(const tab of tabs){
-      browserAPI.tabs.sendMessage(tab.id, {action: 'storeReady'}, () => {
-        if (chrome.runtime.lastError) {
-          // do nothing - errors can be present
-          // if no content script exists on reciever
-        }
-      });
-    }
-  });
+  // browserAPI.tabs.query({}, tabs => {
+  //   for(const tab of tabs){
+  //     browserAPI.tabs.sendMessage(tab.id, {action: 'storeReady'}, () => {
+  //       if (chrome.runtime.lastError) {
+  //         // do nothing - errors can be present
+  //         // if no content script exists on reciever
+  //       }
+  //     });
+  //   }
+  // });
 
   // For non-tab based
   // TODO: Find use case for this. Ommiting until then.
